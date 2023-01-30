@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useState } from "react";
+import Navbar from "./Components/Navbar";
+import styled from "styled-components";
+import "./index.css";
 
 const App = () => {
-  return (
-    <div>App</div>
-  )
-}
+  const [theme, settheme] = useState(false);
 
-export default App
+  return (
+    <Container theme={theme ? "#121721" : "#f4f6f8"}>
+      <Navbar theme={theme} settheme={settheme} />
+    </Container>
+  );
+};
+
+export default App;
+
+const Container = styled.div<any>`
+  background-color: ${(props) => props.theme};
+  height: 500px;
+`;
