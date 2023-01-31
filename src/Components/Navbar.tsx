@@ -45,12 +45,16 @@ const Container = styled.div`
   align-items: center;
   padding: 0px 150px;
   width: 100%;
-  height: 160px;
-  background: url("https://raw.githubusercontent.com/Myudro33/devjobs-web-app/806cc3917f3e7877f19a7e266bdda7128e06b820/src/assets/desktop/bg-pattern-header.svg");
+  height: 170px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image:url("https://raw.githubusercontent.com/Myudro33/devjobs-web-app/806cc3917f3e7877f19a7e266bdda7128e06b820/src/assets/desktop/bg-pattern-header.svg"); ;
   @media screen and (max-width: 768px) {
     padding: 0px 30px;
-    background: url("https://raw.githubusercontent.com/Myudro33/devjobs-web-app/806cc3917f3e7877f19a7e266bdda7128e06b820/src/assets/mobile/bg-pattern-header.svg");
-    background-size: cover;
+    background-image: url("https://raw.githubusercontent.com/Myudro33/devjobs-web-app/806cc3917f3e7877f19a7e266bdda7128e06b820/src/assets/mobile/bg-pattern-header.svg");
+  }
+  @media screen and (max-width:820px) {
+    padding: 0px 50px;
   }
 `;
 
