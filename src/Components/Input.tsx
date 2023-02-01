@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import searchIcon from "../assets/desktop/icon-search.svg";
 import locationIcon from "../assets/desktop/icon-location.svg";
 import locationIconMobile from "../assets/mobile/icon-search.svg";
 import moreOptionsIcon from "../assets/mobile/icon-filter.svg";
+import data from "../assets/data.json";
 
 interface InputProps {
   theme: boolean;
@@ -14,6 +15,9 @@ interface InputProps {
   settitleFilter: React.Dispatch<React.SetStateAction<string>>;
   setlocationFilter: React.Dispatch<React.SetStateAction<string>>;
   locationFilter: string;
+  store: typeof data;
+  setstore: React.Dispatch<React.SetStateAction<typeof data>>;
+  setallCards: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Input = ({
@@ -25,7 +29,21 @@ const Input = ({
   titleFilter,
   locationFilter,
   setlocationFilter,
+  setstore,
+  store,
+  setallCards,
 }: InputProps) => {
+  const clickHandler = () => {
+    setallCards(true);
+    if (fullTimeChecked) {
+      setstore(store.filter((item) => item.contract === "Full Time"));
+    }else{
+   setstore(data)
+    } 
+
+
+  };
+
   return (
     <Container theme={theme ? "#19202d" : "#fff"}>
       <LeftContainer>
@@ -62,7 +80,7 @@ const Input = ({
         onClick={() => setmoreOptions(true)}
         src={moreOptionsIcon}
       />
-      <SearchButton>Button</SearchButton>
+      <SearchButton onClick={clickHandler}>Search</SearchButton>
       <SearchButtonMobile>
         <SearchIconMobile src={locationIconMobile} alt="" />
       </SearchButtonMobile>
