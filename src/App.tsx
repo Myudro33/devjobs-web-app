@@ -17,8 +17,8 @@ const App = () => {
     <Container theme={theme ? "#121721" : "#f4f6f8"}>
       <Navbar theme={theme} settheme={settheme} />
       <Routes>
-        <Route path={"/"} element={<Home theme={theme} store={store} setstore={setstore} />} />
-        <Route path="/:id" element={<JobInfo theme={theme} />} />
+        <Route path={"/devjobs-web-app"} element={<Home theme={theme} store={store} setstore={setstore} />} />
+        <Route path="/devjobs-web-app/:id" element={<JobInfo theme={theme} />} />
       </Routes>
     </Container>
   );
